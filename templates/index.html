@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>도서 관리 시스템 - 관리자</title>
+    <style>
+        body {
+            text-align: center; /* 모든 요소를 가운데 정렬하기 위한 스타일 설정 */
+        }
+    </style>
+</head>
+<body>
+<h1>도서 관리 시스템 - 관리자</h1>
+
+<!-- 멤버 추가 -->
+<h2>멤버 추가</h2>
+<form method="POST" action="/add_member">
+    이름: <input type="text" name="name">
+    전화번호: <input type="text" name="phone">
+    <input type="submit" value="추가">
+</form>
+
+<!-- 멤버 삭제 -->
+<h2>멤버 삭제</h2>
+<form method="POST" action="/remove_member">
+    이름: <input type="text" name="name">
+    <input type="submit" value="삭제">
+</form>
+
+<!-- 책 추가 -->
+<h2>책 추가</h2>
+<form method="POST" action="/add_book">
+    제목: <input type="text" name="title">
+    <input type="submit" value="추가">
+</form>
+
+<!-- 책 삭제 -->
+<h2>책 삭제</h2>
+<form method="POST" action="/remove_book">
+    제목: <input type="text" name="title">
+    <input type="submit" value="삭제">
+</form>
+
+<!-- 책 대출 -->
+<h2>책 대출</h2>
+<form method="POST" action="/borrow_book">
+    멤버 이름: <input type="text" name="member_name">
+    책 제목: <input type="text" name="book_title">
+    <input type="submit" value="대출">
+</form>
+
+<!-- 책 반납 -->
+<h2>책 반납</h2>
+<form method="POST" action="/return_book">
+    멤버 이름: <input type="text" name="member_name">
+    책 제목: <input type="text" name="book_title">
+    <input type="submit" value="반납">
+</form>
+
+<h2>등록된 멤버 목록</h2>
+<ul>
+    {% for member, phone in members.items() %}
+        <li>{{ member }} (전화번호: {{ phone }})</li>
+    {% endfor %}
+</ul>
+
+<h2>책 상태 정보</h2>
+<ul>
+    {% for title, status in books.items() %}
+        <li>{{ title }} (상태: {{ status }})</li>
+    {% endfor %}
+</ul>
+</body>
+</html>
