@@ -1,3 +1,5 @@
+# diff 확인용 주석 변경
+
 # 두 정수 입력
 num1 = float(input("첫 번째 숫자를 입력하세요: "))
 num2 = float(input("두 번째 숫자를 입력하세요: "))
