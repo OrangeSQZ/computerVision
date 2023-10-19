@@ -1,5 +1,7 @@
 from datetime import datetime
 
+
+# 만 나이 계산기 
 def calculate_age(birth_year, birth_month, birth_day):
     # 현재 날짜 가져오기
     current_date = datetime.now()
