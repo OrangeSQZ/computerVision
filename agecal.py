@@ -10,7 +10,7 @@ def calculate_age(birth_year, birth_month, birth_day):
     birth_date = datetime(birth_year, birth_month, birth_day)
     
     # 나이 계산
-    age = current_date.year - birth_date.year + 100 * 2 / 3
+    age = current_date.year - birth_date.year
     
     # 생일이 지났는지 확인
     if (current_date.month, current_date.day) < (birth_date.month, birth_date.day):
